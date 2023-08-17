@@ -5,8 +5,9 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { useDispatch, useSelector } from "react-redux";
 import { getStudents } from "../../store/actions/actionStudents";
 const editIcon = <Icon name="edit" size={20} color="#900" />;
+const addIcon = <Icon name="plus" size={12} color="#000000" />;
 
-const TableComp = () => {
+const TableComp = ({ navigation }) => {
   const [page, setPage] = React.useState(0);
   const [numberOfItemsPerPageList] = React.useState([8, 16]);
   const [itemsPerPage, onItemsPerPageChange] = React.useState(
@@ -25,34 +26,48 @@ const TableComp = () => {
 
   React.useEffect(() => {
     setPage(0);
-    console.log(students);
   }, [itemsPerPage]);
 
   return (
-    <DataTable style={styles.container}>
-      <DataTable.Header>
-        <DataTable.Title>Student Name</DataTable.Title>
-        <DataTable.Title numeric>Date Of Birth</DataTable.Title>
-        <DataTable.Title numeric>Actions</DataTable.Title>
-      </DataTable.Header>
+    <View style={styles.container}>
+      <Button>Add Student {addIcon}</Button>
+      <DataTable>
+        <DataTable.Header>
+          <DataTable.Title>Student Name</DataTable.Title>
+          <DataTable.Title numeric>Date Of Birth</DataTable.Title>
+          <DataTable.Title numeric>Actions</DataTable.Title>
+        </DataTable.Header>
 
-      {students.map((item, index) => (
-        <DataTable.Row key={index}>
-          <DataTable.Cell>{item.Name}</DataTable.Cell>
-          <DataTable.Cell numeric>{item.DoB}</DataTable.Cell>
-          <DataTable.Cell numeric>
-            <View style={styles.hstack}>
-              <Button>{editIcon}</Button>
-            </View>
-          </DataTable.Cell>
-        </DataTable.Row>
-      ))}
-    </DataTable>
+        {students.map((item, index) => (
+          <DataTable.Row key={index}>
+            <DataTable.Cell>{item.Name}</DataTable.Cell>
+            <DataTable.Cell numeric>{item.DoB}</DataTable.Cell>
+            <DataTable.Cell numeric>
+              <View style={styles.hstack}>
+                <Button
+                  onPress={() => {
+                    navigation.navigate("EditStudent", {
+                      student: item,
+                    });
+                  }}
+                >
+                  {editIcon}
+                </Button>
+              </View>
+            </DataTable.Cell>
+          </DataTable.Row>
+        ))}
+      </DataTable>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    marginTop: -10,
+    justifyContent: "center",
+    alignItems: "flex-start",
+  },
   hstack: {},
 });
 

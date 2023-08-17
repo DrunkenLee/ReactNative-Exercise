@@ -7,7 +7,7 @@ import {
 import TableComp from "../../Components/Students/DataTable";
 import SearchBarComp from "../../Components/Students/SearchBarComp";
 
-const StudentsPage = () => {
+const StudentsPage = ({ navigation }) => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -19,8 +19,7 @@ const StudentsPage = () => {
         paddingRight: insets.right,
       }}
     >
-      <SearchBarComp />
-      <TableComp />
+      <TableComp navigation={navigation} />
     </ScrollView>
   );
 };
