@@ -1,14 +1,17 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, ScrollView } from "react-native";
+import React, { useEffect, useState } from "react";
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import TableComp from "../../Components/Students/DataTable";
+import SearchBarComp from "../../Components/Students/SearchBarComp";
 
 const StudentsPage = () => {
   const insets = useSafeAreaInsets();
+
   return (
-    <View
+    <ScrollView
       style={{
         paddingTop: insets.top,
         paddingBottom: insets.bottom,
@@ -16,8 +19,9 @@ const StudentsPage = () => {
         paddingRight: insets.right,
       }}
     >
-      <Text>StudentsPage.</Text>
-    </View>
+      <SearchBarComp />
+      <TableComp />
+    </ScrollView>
   );
 };
 
