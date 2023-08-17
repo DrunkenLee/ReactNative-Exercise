@@ -2,34 +2,13 @@ import { View, Text, StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { TextInput, Button } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
-import { useDispatch } from "react-redux";
-import { postStudent } from "../../store/actions/actionStudents";
 
-const AddStudentPage = ({ navigation }) => {
-  const dispatch = useDispatch();
-  const insets = useSafeAreaInsets();
-
-  const [name, setName] = useState("");
-  const [dob, setDob] = useState("");
+const ReusableForm = ({ student }) => {
+  const [studentId, setStudentId] = useState(student?.id);
+  const [name, setName] = useState(student?.Name);
+  const [dob, setDob] = useState(student?.DoB);
 
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [selectedDate] = useState(new Date());
-
-  const handleSave = async () => {
-    console.log("Name:", name);
-    console.log("Date of Birth:", dob);
-
-    try {
-      dispatch(postStudent({ Name: name, DoB: dob }));
-      navigation.navigate("Students");
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
 
   return (
     <View style={[styles.container]}>
@@ -97,4 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddStudentPage;
+export default ReusableForm;

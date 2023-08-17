@@ -6,7 +6,6 @@ import {
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import axios from "axios";
 import { studentUrl, updateStudent } from "../../store/actions/actionStudents";
 import { useDispatch } from "react-redux";
 
@@ -37,17 +36,7 @@ const EditStudentPage = ({ navigation, route }) => {
 
   return (
     <SafeAreaProvider>
-      <View
-        style={[
-          styles.container,
-          {
-            paddingTop: insets.top,
-            paddingBottom: insets.bottom,
-            paddingLeft: insets.left,
-            paddingRight: insets.right,
-          },
-        ]}
-      >
+      <View style={styles.container}>
         <TextInput
           label="Name"
           value={name}

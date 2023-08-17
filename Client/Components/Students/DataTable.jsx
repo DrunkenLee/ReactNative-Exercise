@@ -30,7 +30,13 @@ const TableComp = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Button>Add Student {addIcon}</Button>
+      <Button
+        onPress={() => {
+          navigation.navigate("AddStudent");
+        }}
+      >
+        Add Student {addIcon}
+      </Button>
       <DataTable>
         <DataTable.Header>
           <DataTable.Title>Student Name</DataTable.Title>

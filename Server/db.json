@@ -49,13 +49,48 @@
       "id": 10,
       "Name": "Daniel Clark",
       "DoB": "2002-06-09"
+    },
+    {
+      "Name": "Ty est",
+      "DoB": "2023-08-11",
+      "id": 11
+    },
+    {
+      "Name": "Ydhjsd",
+      "DoB": "2023-08-17",
+      "id": 12
+    },
+    {
+      "Name": "Gsghxd",
+      "DoB": "2023-08-17",
+      "id": 13
+    },
+    {
+      "Name": "Hh",
+      "DoB": "2023-08-19",
+      "id": 14
+    },
+    {
+      "Name": "Jackie",
+      "DoB": "2023-08-15",
+      "id": 15
+    },
+    {
+      "Name": "Jackie",
+      "DoB": "2023-08-17",
+      "id": 16
+    },
+    {
+      "Name": "Jackie",
+      "DoB": "2023-08-13",
+      "id": 17
     }
   ],
   "courses": [
     {
       "id": 1,
       "CourseName": "Mathematics 101",
-      "Stidentids": [
+      "Students": [
         2,
         4,
         6
@@ -64,7 +99,7 @@
     {
       "id": 2,
       "CourseName": "History 201",
-      "Stidentids": [
+      "Students": [
         1,
         3,
         7,
@@ -74,7 +109,7 @@
     {
       "id": 3,
       "CourseName": "Science Lab",
-      "Stidentids": [
+      "Students": [
         5,
         9,
         10
