@@ -49,32 +49,18 @@
       "Name": "Daniel Clarks",
       "DoB": "2002-06-09",
       "id": 10
-    },
-    {
-      "Name": "Jon",
-      "DoB": "2023-08-27",
-      "id": 11
-    },
-    {
-      "Name": "Casset",
-      "DoB": "2023-08-27",
-      "id": 12
-    },
-    {
-      "Name": "Mikasa",
-      "DoB": "2023-08-18",
-      "id": 13
     }
   ],
   "courses": [
     {
-      "id": 1,
-      "CourseName": "Math 101",
+      "CourseName": "Math 201",
       "Students": [
         2,
         4,
-        6
-      ]
+        6,
+        1
+      ],
+      "id": 1
     },
     {
       "id": 2,

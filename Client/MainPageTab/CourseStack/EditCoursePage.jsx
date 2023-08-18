@@ -4,19 +4,15 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import EditCourseForm from "../../Components/Courses/EditCourseForm";
 
-const EditCoursePage = () => {
+const EditCoursePage = ({ navigation, route }) => {
+  const { course } = route.params;
+  console.log(course);
   const insets = useSafeAreaInsets();
   return (
-    <View
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-      }}
-    >
-      <Text>EditCoursePage Screen.</Text>
+    <View style={{}}>
+      <EditCourseForm navigation={navigation} course={course} />
     </View>
   );
 };
