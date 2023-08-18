@@ -4,19 +4,14 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import DropdownMenu from "../../Components/Courses/DropdownMenu";
+import AddCourseForm from "../../Components/Courses/AddCourseForm";
 
-const AddCoursePage = () => {
+const AddCoursePage = ({ navigation }) => {
   const insets = useSafeAreaInsets();
   return (
-    <View
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-      }}
-    >
-      <Text>AddCoursePage Screen.</Text>
+    <View style={{}}>
+      <AddCourseForm navigation={navigation} />
     </View>
   );
 };

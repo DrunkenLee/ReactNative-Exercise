@@ -6,11 +6,11 @@ import {
 } from "react-native-safe-area-context";
 import TableComp from "../../Components/Courses/DataTable";
 
-const CoursePage = () => {
+const CoursePage = ({ navigation }) => {
   const insets = useSafeAreaInsets();
   return (
     <View style={{ marginTop: 20 }}>
-      <TableComp />
+      <TableComp navigation={navigation} />
     </View>
   );
 };

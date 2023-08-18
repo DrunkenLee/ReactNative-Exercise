@@ -69,7 +69,7 @@
   "courses": [
     {
       "id": 1,
-      "CourseName": "Mathematics 101",
+      "CourseName": "Math 101",
       "Students": [
         2,
         4,
@@ -94,6 +94,14 @@
         9,
         10
       ]
+    },
+    {
+      "CourseName": "English 101",
+      "Students": [
+        11,
+        12
+      ],
+      "id": 4
     }
   ]
 }
