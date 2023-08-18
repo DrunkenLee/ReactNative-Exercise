@@ -4,19 +4,13 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import TableComp from "../../Components/Courses/DataTable";
 
 const CoursePage = () => {
   const insets = useSafeAreaInsets();
   return (
-    <View
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-      }}
-    >
-      <Text>CoursePage Screen.</Text>
+    <View style={{ marginTop: 20 }}>
+      <TableComp />
     </View>
   );
 };

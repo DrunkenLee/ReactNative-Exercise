@@ -1,5 +1,5 @@
 import axios from "axios";
-export const studentUrl = "https://ed72-103-195-58-37.ngrok-free.app/students";
+export const studentUrl = " https://4256-103-195-58-37.ngrok-free.app/students";
 // Action Types
 export const FETCH_STUDENTS_SUCCESS = "FETCH_STUDENTS_SUCCESS";
 export const FETCH_STUDENTS_FAILURE = "FETCH_STUDENTS_FAILURE";
@@ -61,7 +61,7 @@ export const getStudents = () => {
       dispatch(fetchStudentsSuccess(data));
     } catch (error) {
       console.log(error);
-      dispatch(fetchStudentsFailure(error.message)); // Dispatch an error action
+      dispatch(fetchStudentsFailure(error.message));
     }
   };
 };

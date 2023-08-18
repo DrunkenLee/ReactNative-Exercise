@@ -11,26 +11,27 @@ const TableComp = ({ navigation }) => {
   const students = useSelector((state) => state.students.data);
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    dispatch(getStudents());
-  }, []);
+  const courses = [];
+
+  React.useEffect(() => {}, []);
+
   return (
     <View style={styles.container}>
       <Button
         onPress={() => {
-          navigation.navigate("AddStudent");
+          navigation.navigate("AddCoursePage");
         }}
       >
-        Add Student {addIcon}
+        Add Course {addIcon}
       </Button>
       <DataTable>
         <DataTable.Header>
-          <DataTable.Title>Student Name</DataTable.Title>
-          <DataTable.Title numeric>Date Of Birth</DataTable.Title>
+          <DataTable.Title>Course Name</DataTable.Title>
+          <DataTable.Title numeric>Students Count</DataTable.Title>
           <DataTable.Title numeric>Actions</DataTable.Title>
         </DataTable.Header>
 
-        {students.map((item, index) => (
+        {courses.map((item, index) => (
           <DataTable.Row key={index}>
             <DataTable.Cell>{item.Name}</DataTable.Cell>
             <DataTable.Cell numeric>{item.DoB}</DataTable.Cell>
@@ -38,8 +39,8 @@ const TableComp = ({ navigation }) => {
               <View style={styles.hstack}>
                 <Button
                   onPress={() => {
-                    navigation.navigate("EditStudent", {
-                      student: item,
+                    navigation.navigate("EditCoursePage", {
+                      course: item,
                     });
                   }}
                 >

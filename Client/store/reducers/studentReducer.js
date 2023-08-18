@@ -17,32 +17,18 @@ export default function studentReducer(state = initialState, action) {
       };
 
     case UPDATE_STUDENT_SUCCESS:
-      const updatedIndex = state.data.findIndex(
-        (student) => student.id === action.payload.id
-      );
-      if (updatedIndex !== -1) {
-        const updatedData = [...state.data];
-        updatedData[updatedIndex] = action.payload;
-        return {
-          ...state,
-          data: updatedData,
-        };
-      }
-      return state;
+      return {
+        ...state,
+        data: state.data.map((student) =>
+          student.id === action.payload.id ? action.payload : student
+        ),
+      };
 
     case POST_STUDENT_SUCCESS:
-      const newIndex = state.data.findIndex(
-        (student) => student.id === action.payload.id
-      );
-      if (updatedIndex !== -1) {
-        const updatedData = [...state.data];
-        updatedData[updatedIndex] = action.payload;
-        return {
-          ...state,
-          data: updatedData,
-        };
-      }
-      return state;
+      return {
+        ...state,
+        data: [...state.data, action.payload],
+      };
 
     default:
       return state;
